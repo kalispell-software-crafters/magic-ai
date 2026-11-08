@@ -29,6 +29,24 @@ To download a different bulk type, set `SCRYFALL_BULK_TYPE`, for example:
 SCRYFALL_BULK_TYPE=oracle_cards python3 card-data-download/driver.py
 ```
 
+You can also use Makefile targets for each bulk type:
+
+```shell
+make bulk-default-cards
+make bulk-oracle-cards
+make bulk-unique-artwork
+make bulk-all-cards
+make bulk-rulings
+make bulk-art-tags
+make bulk-oracle-tags
+```
+
+To run all bulk data downloads in one command:
+
+```shell
+make bulk-all
+```
+
 Valid Bulk Data Types
 
 - oracle_cards
