@@ -13,6 +13,32 @@ This project is unofficial Fan Content permitted under the [Fan Content Policy](
 
 The script under `card-data-download` pulls bulk card data from Scrfall.com's API. This data will be transformed and inserted into a database for reference.
 
+Run the script with:
+```shell
+python3 card-data-download/driver.py
+```
+
+By default, it downloads the `default_cards` bulk file and writes results into the `bulk-data` folder at the project root:
+
+- `bulk-data/bulk-data-catalog.json` (bulk metadata)
+- `bulk-data/<downloaded-file>` (for example `oracle-cards-YYYYMMDDHHMMSS.jsonl.gz`)
+
+To download a different bulk type, set `SCRYFALL_BULK_TYPE`, for example:
+
+```shell
+SCRYFALL_BULK_TYPE=oracle_cards python3 card-data-download/driver.py
+```
+
+Valid Bulk Data Types
+
+- oracle_cards
+- unique_artwork
+- default_cards
+- all_cards
+- rulings
+- art_tags
+- oracle_tags
+
 - [Bulk Data Files - Scrfall](https://scryfall.com/docs/api/bulk-data)
 
 ## Research Concepts
