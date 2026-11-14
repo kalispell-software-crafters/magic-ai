@@ -36,11 +36,11 @@ if __name__ == "__main__":
     bulk_items = catalog_data.get("data", [])
     bulk_item = _find_bulk_item(bulk_items, requested_bulk_type)
 
-    download_url = bulk_item.get("download_uri") or bulk_item.get("jsonl_download_uri")
+    download_url = bulk_item.get("jsonl_download_uri")
     if not download_url:
         raise ValueError(
             f"Bulk data item '{requested_bulk_type}' does not include a download URL field "
-            "(expected download_uri or jsonl_download_uri)."
+            "(expected jsonl_download_uri)."
         )
 
     output_filename = Path(urlparse(download_url).path).name or f"{requested_bulk_type}.json"
